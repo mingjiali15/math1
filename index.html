@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz for Kids</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            display: inline-block;
+        }
+        .container h2 {
+            color: #333;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .result {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .try-again {
+            color: orange;
+        }
+        .star {
+            font-size: 2em;
+            color: gold;
+        }
+        .next-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Quiz for Kids</h1>
+    <div id="setup" class="container">
+        <h2>Setup Your Quiz</h2>
+        <label for="math-type">Choose Math Type:</label>
+        <select id="math-type">
+            <option value="addition">Addition</option>
+            <option value="subtraction">Subtraction</option>
+            <option value="both">Both</option>
+        </select><br><br>
+        <label for="min-number">Minimum Number:</label>
+        <input type="number" id="min-number" value="1"><br><br>
+        <label for="max-number">Maximum Number:</label>
+        <input type="number" id="max-number" value="10"><br><br>
+        <label for="num-questions">Number of Questions:</label>
+        <input type="number" id="num-questions" value="20"><br><br>
+        <label for="num-attempts">Number of Attempts per Question:</label>
+        <input type="number" id="num-attempts" value="1"><br><br>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="quiz" class="container" style="display:none;">
+        <h2>Math Quiz</h2>
+        <p id="question-number"></p>
+        <p id="question" class="question"></p>
+        <input type="number" id="answer">
+        <button onclick="submitAnswer()">Submit</button>
+        <p id="result" class="result"></p>
+        <button id="next-button" class="next-button" onclick="nextQuestion()" style="display:none;">Next Question</button>
+    </div>
+    <div id="summary" class="container" style="display:none;">
+        <h2>Quiz Summary</h2>
+        <p id="summary-text"></p>
+        <p id="star" class="star" style="display:none;">⭐</p>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
