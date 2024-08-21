@@ -1,128 +1,99 @@
-/* Basic Reset and Layout */
 body {
+  font-family: Arial, sans-serif;
+  text-align: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
 }
 
-/* Setup Page Styles */
+#setup-container, #quiz-container, #result-container {
+  margin: 20px;
+}
+
+input[type="number"], button {
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 10px;
+}
+
 #setup-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
 }
 
-#setup-container h1 {
-  margin-bottom: 20px;
-}
-
-label {
-  margin-top: 10px;
+#setup-container label {
   font-size: 1.2em;
 }
 
-input, select, button {
-  margin-top: 10px;
-  padding: 10px;
+#setup-container select, 
+#setup-container input {
   font-size: 1em;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
-/* Quiz Page Styles */
-#quiz-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+#question-container {
+  margin: 20px 0; /* Adds space around the question container */
+}
+
+#question-number {
+  font-size: 1.2em; /* Smaller font size for question number */
+  margin-bottom: 10px; /* Adds space between question number and question text */
 }
 
 #question {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1.8em; /* Larger font size for question text */
+  line-height: 1.5; /* Improves line spacing */
+  text-align: center; /* Centers the question text */
 }
 
-#answer {
+input[type="number"] {
   font-size: 1.2em;
-  width: 100%;
   padding: 10px;
+  width: calc(100% - 22px); /* Full width minus padding */
   box-sizing: border-box;
 }
 
 button {
   font-size: 1.2em;
-  padding: 10px 20px;
-  margin-top: 10px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }
 
-#submit {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#next-question {
-  background-color: #008CBA;
-  color: white;
-  border: none;
-}
-
-/* Result Page Styles */
 #result-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-#result-container h1 {
-  margin-bottom: 20px;
 }
 
 #final-message {
   font-size: 2em;
-  font-weight: bold;
+  color: gold;
 }
 
-/* Media Queries */
 @media (max-width: 600px) {
   #question {
-    font-size: 1.2em; /* Smaller font size for smaller screens */
+    font-size: 1.5em;
   }
 
-  #answer {
-    font-size: 1em; /* Smaller font size for input field */
+  #question-number {
+    font-size: 1em;
   }
 
-  button {
-    font-size: 1em; /* Smaller font size for buttons */
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  #question {
-    font-size: 1.3em; /* Adjust font size for tablets */
+  input[type="number"], button {
+    font-size: 1em;
+    padding: 8px;
   }
 
-  #answer {
-    font-size: 1.1em; /* Adjust font size for input field */
-  }
-
-  button {
-    font-size: 1.1em; /* Adjust font size for buttons */
+  #setup-container select,
+  #setup-container input {
+    font-size: 0.9em;
   }
 }

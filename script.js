@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const numQuestionsInput = document.getElementById('num-questions');
   const numTriesInput = document.getElementById('num-tries');
   
+  const questionNumberElement = document.getElementById('question-number');
   const questionElement = document.getElementById('question');
   const answerInput = document.getElementById('answer');
   const totalQuestionsElement = document.getElementById('total-questions');
@@ -76,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function showQuestion() {
     if (currentQuestionIndex < questions.length) {
       const currentQuestion = questions[currentQuestionIndex];
-      questionElement.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.question}`;
+      questionNumberElement.textContent = `Question ${currentQuestionIndex + 1}`;
+      questionElement.textContent = currentQuestion.question;
       answerInput.value = '';
       answerInput.focus();
       submitButton.style.display = 'block';
@@ -92,48 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const userAnswer = parseFloat(answerInput.value);
     if (userAnswer === currentQuestion.answer) {
       questionsCorrect++;
-      questionElement.innerHTML = `<span style="color: green; font-size: 1.5em;">Correct!</span>`;
+      questionElement.innerHTML = `<span style="color: green; font-size: 1.8em;">Correct!</span>`;
       submitButton.style.display = 'none';
       nextQuestionButton.style.display = 'block';
     } else {
       questionsIncorrect++;
       numTries--;
       if (numTries > 0) {
-        questionElement.innerHTML = `<span style="color: yellow; font-size: 1.5em;">Try again</span>`;
-        answerInput.value = ''; // Clear the input field
-      } else {
-        questionElement.innerHTML = `<span style="color: red; font-size: 1.5em;">The correct answer is ${currentQuestion.answer}</span>`;
-        submitButton.style.display = 'none';
-        nextQuestionButton.style.display = 'block';
-      }
-    }
-    questionsAnswered++;
-  }
-
-  // Function to handle moving to the next question
-  function handleNextQuestion() {
-    currentQuestionIndex++;
-    showQuestion();
-  }
-
-  // Function to show the results
-  function showResults() {
-    setupContainer.style.display = 'none';
-    quizContainer.style.display = 'none';
-    resultContainer.style.display = 'flex';
-
-    totalQuestionsElement.textContent = questionsAnswered;
-    questionsCorrectElement.textContent = questionsCorrect;
-    questionsIncorrectElement.textContent = questionsIncorrect;
-
-    if (questionsIncorrect === 0) {
-      finalMessageElement.innerHTML = `<span style="color: gold; font-size: 2em;">🎉 Perfect Score! 🎉</span>`;
-    } else {
-      finalMessageElement.textContent = `Quiz Complete!`;
-    }
-  }
-
-  startQuizButton.addEventListener('click', startQuiz);
-  submitButton.addEventListener('click', handleSubmit);
-  nextQuestionButton.addEventListener('click', handleNextQuestion);
-});
+        questionElement.innerHTML = `<span style="color: yellow; font-size: 1.8em;">Try again</span>`;
+        answerInput.value = ''; // Clear the

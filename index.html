@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Arithmetic App</title>
+  <title>Math Quiz App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,34 +15,37 @@
       <option value="subtraction">Subtraction</option>
       <option value="both">Both</option>
     </select>
-    
+    <br>
     <label for="min-number">Minimum Number:</label>
     <input type="number" id="min-number" value="0">
-    
+    <br>
     <label for="max-number">Maximum Number:</label>
     <input type="number" id="max-number" value="10">
-    
+    <br>
     <label for="num-questions">Number of Questions:</label>
-    <input type="number" id="num-questions" value="5">
-    
+    <input type="number" id="num-questions" min="1" value="20">
+    <br>
     <label for="num-tries">Number of Tries:</label>
-    <input type="number" id="num-tries" value="2">
-    
+    <input type="number" id="num-tries" min="1" value="2">
+    <br>
     <button id="start-quiz">Start Quiz</button>
   </div>
 
   <div id="quiz-container" style="display: none;">
-    <div id="question"></div>
-    <input type="text" id="answer" placeholder="Enter your answer">
+    <div id="question-container">
+      <div id="question-number"></div>
+      <div id="question"></div>
+    </div>
+    <input type="number" id="answer">
     <button id="submit">Submit</button>
     <button id="next-question" style="display: none;">Next Question</button>
   </div>
 
   <div id="result-container" style="display: none;">
     <h1>Quiz Results</h1>
-    <p>Total Questions Answered: <span id="total-questions"></span></p>
-    <p>Questions Correct: <span id="questions-correct"></span></p>
-    <p>Questions Incorrect: <span id="questions-incorrect"></span></p>
+    <p>Total Questions Answered: <span id="total-questions">0</span></p>
+    <p>Questions Correct: <span id="questions-correct">0</span></p>
+    <p>Questions Incorrect: <span id="questions-incorrect">0</span></p>
     <div id="final-message"></div>
   </div>
 
