@@ -1,0 +1,128 @@
+/* Basic Reset and Layout */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+/* Setup Page Styles */
+#setup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#setup-container h1 {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+input, select, button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Quiz Page Styles */
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#question {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#answer {
+  font-size: 1.2em;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#submit {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+#next-question {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+}
+
+/* Result Page Styles */
+#result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#result-container h1 {
+  margin-bottom: 20px;
+}
+
+#final-message {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  #question {
+    font-size: 1.2em; /* Smaller font size for smaller screens */
+  }
+
+  #answer {
+    font-size: 1em; /* Smaller font size for input field */
+  }
+
+  button {
+    font-size: 1em; /* Smaller font size for buttons */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  #question {
+    font-size: 1.3em; /* Adjust font size for tablets */
+  }
+
+  #answer {
+    font-size: 1.1em; /* Adjust font size for input field */
+  }
+
+  button {
+    font-size: 1.1em; /* Adjust font size for buttons */
+  }
+}
